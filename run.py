@@ -74,12 +74,13 @@ class WatsonEnv:
 
     @staticmethod
     def get_watson_online_store():
-        print("get_watson_online_store11111:SLACK_BOT_USER:"+os.environ.get("SLACK_BOT_USER"))
-        print("get_watson_online_store11111:SLACK_BOT_TOKEN:"+os.environ.get("SLACK_BOT_TOKEN"))
+        print(os.environ)
         fname = '.env'
         dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), fname))
         load_dotenv(dotenv_path)
         print("path"+dotenv_path)
+        
+        print(os.environ)
         
         # Use these env vars first if set
         bot_id = os.environ.get("SLACK_BOT_USER")
