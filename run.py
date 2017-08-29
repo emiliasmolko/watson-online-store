@@ -76,8 +76,9 @@ class WatsonEnv:
     def get_watson_online_store():
         print("get_watson_online_store11111:SLACK_BOT_USER:"+os.environ.get("SLACK_BOT_USER"))
         print("get_watson_online_store11111:SLACK_BOT_TOKEN:"+os.environ.get("SLACK_BOT_TOKEN"))
-       
-        load_dotenv("./.env")
+        fname = '.env'
+        dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', fname))
+        load_dotenv(dotenv_path)
         #print("path"+os.path.dirname(__file__))
         
         # Use these env vars first if set
