@@ -6,7 +6,7 @@ from slackclient import SlackClient
 logging.basicConfig(level=logging.DEBUG)
 LOG = logging.getLogger(__name__)
 
-BOT_NAME = "wos"
+BOT_NAME = "watsonbot"
 
 slack_client = SlackClient(os.environ.get('SLACK_BOT_TOKEN'))
 
