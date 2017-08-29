@@ -54,7 +54,7 @@ class WatsonEnv:
         """
         slack_bot_user = os.environ.get('SLACK_BOT_USER')
         print("Looking up BOT_ID for '%s'" % slack_bot_user)
-
+        """
         api_call = slack_client.api_call("users.list")
         if api_call.get('ok'):
             # retrieve all users so we can find our bot
@@ -68,6 +68,7 @@ class WatsonEnv:
                 print("could not find user with the name " + slack_bot_user)
         else:
             print("could not find user because api_call did not return 'ok'")
+            """
         return None
 
     @staticmethod
