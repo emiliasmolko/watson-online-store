@@ -79,7 +79,7 @@ class WatsonEnv:
         fname = '.env'
         dotenv_path = os.path.abspath(os.path.join(os.path.dirname(__file__), fname))
         load_dotenv(dotenv_path)
-        #print("path"+os.path.dirname(__file__))
+        print("path"+dotenv_path)
         
         # Use these env vars first if set
         bot_id = os.environ.get("SLACK_BOT_USER")
