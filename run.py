@@ -53,8 +53,9 @@ class WatsonEnv:
         This should be called after env is loaded when using dotenv.
         """
         slack_bot_user = os.environ.get('SLACK_BOT_USER')
+        print("get_slack_user_id:SLACK_BOT_USER:"+slack_bot_user)
         print("Looking up BOT_ID for '%s'" % slack_bot_user)
-        """
+        
         api_call = slack_client.api_call("users.list")
         if api_call.get('ok'):
             # retrieve all users so we can find our bot
@@ -68,7 +69,7 @@ class WatsonEnv:
                 print("could not find user with the name " + slack_bot_user)
         else:
             print("could not find user because api_call did not return 'ok'")
-            """
+            
         return None
 
     @staticmethod
@@ -77,7 +78,9 @@ class WatsonEnv:
 
         # Use these env vars first if set
         bot_id = os.environ.get("SLACK_BOT_USER")
+        print("get_watson_online_store:SLACK_BOT_USER:"+bot_id)
         slack_bot_token = os.environ.get('SLACK_BOT_TOKEN')
+        print("get_watson_online_store:SLACK_BOT_TOKEN:"+slack_bot_token)
         conversation_username = os.environ.get("CONVERSATION_USERNAME")
         conversation_password = os.environ.get("CONVERSATION_PASSWORD")
         cloudant_username = os.environ.get("CLOUDANT_USERNAME")
@@ -157,13 +160,14 @@ class WatsonEnv:
             version='2017-07-19',
             username=discovery_username,
             password=discovery_password)
-
+        print("get_watson_online_store:SLACK_BOT_TOKEN:"+slack_bot_token)
         # Instantiate Slack chatbot.
         if 'placeholder' in slack_bot_token:
             raise Exception("SLACK_BOT_TOKEN needs to be set correctly. "
                             "It is currently set to 'placeholder'.")
         slack_client = SlackClient(slack_bot_token)
         # If BOT_ID wasn't set, we can get it using SlackClient and user ID.
+        print("get_watson_online_store:SLACK_BOT_TOKEN:"+bot_id)
         if not bot_id:
             bot_id = WatsonEnv.get_slack_user_id(slack_client)
             if not bot_id:
