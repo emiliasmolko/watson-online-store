@@ -75,7 +75,7 @@ class WatsonEnv:
         load_dotenv(os.path.join(os.path.dirname(__file__), ".env"))
 
         # Use these env vars first if set
-        bot_id = os.environ.get("BOT_ID")
+        bot_id = os.environ.get("SLACK_BOT_USER")
         slack_bot_token = os.environ.get('SLACK_BOT_TOKEN')
         conversation_username = os.environ.get("CONVERSATION_USERNAME")
         conversation_password = os.environ.get("CONVERSATION_PASSWORD")
