@@ -78,7 +78,7 @@ class WatsonEnv:
         print("get_watson_online_store11111:SLACK_BOT_TOKEN:"+os.environ.get("SLACK_BOT_TOKEN"))
        
         load_dotenv("./.env")
-        ptint("path":os.path.dirname(__file__))
+        print("path":os.path.dirname(__file__))
         
         # Use these env vars first if set
         bot_id = os.environ.get("SLACK_BOT_USER")
